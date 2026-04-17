@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-theme-bg: #f3f4f6;
+  --color-theme-surface: #ffffff;
+  --color-theme-primary: #3b82f6;
+  --color-theme-primary-soft: #dbeafe;
+  --color-theme-success: #22c55e;
+  --color-theme-success-soft: #dcfce7;
+  --color-theme-text-main: #111827;
+  --color-theme-text-sub: #6b7280;
+  --color-theme-border: #e5e7eb;
+}
+
+@layer base {
+  body {
+    @apply bg-theme-bg text-theme-text-main antialiased;
+  }
+}
+
+/* Geometric Grid Utility */
+.geometric-grid {
+  @apply border-t border-l border-theme-border;
+}
+
+.geometric-cell {
+  @apply border-r border-b border-theme-border transition-colors duration-200;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-theme-border rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-300;
+}
